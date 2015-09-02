@@ -37,12 +37,13 @@ It uses Flexbox as a CSS model. This means that supported browsers are:
 * Android 4.4+
 
 
-### Conceptual notes
+### Architecture
 
-There are 2 parts that compose this project. The front-end is an `Ember.js` SPA and sits inside the `ember` directory.
-The backend server is an `Express` based app and sits inside the `express` directory.
+There are 2 parts that compose this project. 
 
-The `Express` server handles both the API and the serving of the `Ember.js` site.  
+The front-end is an `Ember.js` SPA and sits inside the `ember` directory.
+
+The backend server is an `Express` based app and sits inside the `express` directory. The `Express` server handles both the API and the serving of the `Ember.js` site.  
 
 ### Installation
 
