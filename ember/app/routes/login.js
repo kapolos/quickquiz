@@ -14,13 +14,12 @@ export default Ember.Route.extend({
             this.controller.set('checking', true);
             this.get('auth').isValid()
                 .then((data) => {
-                    console.log(data);
                     this.controller.set('checking', false);
                     if (data !== true) {
                         this.set('loginFailed', true);
                     } else {
                         this.get("cookie").setCookie("adminpasswd", this.controller.get('adminpasswd'));
-                        this.get('auth').setStatus(true);
+                        this.get('auth').set('isLogged', true);
                         this.transitionTo('admin.questions');
                     }
                 })

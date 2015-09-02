@@ -12,7 +12,7 @@ export default Ember.Route.extend({
                         if (data !== true) {
                             this.transitionTo('login');
                         } else {
-                            this.get('auth').setStatus(true);
+                            this.get('auth').set('isLogged', true);
                         }
                     });
             } else {
