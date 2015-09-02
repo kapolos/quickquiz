@@ -85,6 +85,36 @@ npm test
 
 The tests are run with SQLite3 as a persistence layer.
 
+````
+Resetting DB...
+Webserver started on port 4201
+  Question/Answer
+    Associations
+      ✓ should create a new answer, associate it with the question and return the instance
+      ✓ should return all the answers along with the question
+      ✓ should have removed the answers when removing the question
+
+  API
+    Public
+      ✓ should return a single question for an unidentified user (in JSON)
+      ✓ should return a single question for an identified user (in JSON)
+      ✓ should store a response for the previously identified user
+    Admin
+      ✓ should return 403 if not authenticated
+      ✓ auth should return true with the right credential
+      ✓ should create a new question
+      ✓ should update the previous question
+      ✓ should create a new answer associated with the previous question
+      ✓ should update the previous answer
+      ✓ should remove the previous answer
+      ✓ should remove the previous question
+      ✓ should get the list of the results
+
+
+  15 passing (317ms)
+
+````
+
 ### Development
 
 The `Ember.js` SPA is delivered pre-built. To be able to make changes, you have to follow the directions bellow
