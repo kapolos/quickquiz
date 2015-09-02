@@ -80,7 +80,7 @@ npm install -g mocha
 Then in the `express` directory:
 
 ```bash
-mocha
+npm test
 ```
 
 The tests are run with SQLite3 as a persistence layer.
