@@ -9,7 +9,7 @@ export default Ember.Route.extend({
                 this.set('auth.password', cookiePass);
                 this.get('auth').isValid()
                     .then((data) => {
-                        if (data !== "true") {
+                        if (data !== true) {
                             this.transitionTo('login');
                         } else {
                             this.get('auth').setStatus(true);
