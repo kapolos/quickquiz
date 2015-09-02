@@ -17,7 +17,7 @@ An admin enters survey questions with multiple choice answers. Full CRUD is supp
 When a guest visits the app in a browser it should present a random survey
 question to the guest and allow them to answer.
 
-It record answers and displays the survey results in an admin interface.
+It records answers and displays the survey results in an admin interface.
 
 It will never show a previously answered question to the same guest.
 
@@ -120,6 +120,7 @@ Webserver started on port 4201
 The `Ember.js` SPA is delivered pre-built. To be able to make changes, you have to follow the directions bellow
 (it is assumed that the command bellow are given inside the `ember` folder as a working directory).
 
+You will need to have the common build tools installed in your machine (like python).
 
 Install `ember-cli`
 
