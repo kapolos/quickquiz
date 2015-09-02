@@ -1,0 +1,90 @@
+#template-admin {
+
+  footer {
+    margin-top: 0;
+
+    #fe-navlogo {
+      width: 80px;
+      flex-grow: 0;
+      flex-shrink: 0;
+    }
+  }
+
+  #innerSubhead {
+    display: flex;
+  }
+
+  #questionsInnerWrapper {
+    min-width: 650px;
+    min-height: 400px;
+
+    .ember-view .ember-content-editable {
+      display: inline;
+      vertical-align: super;
+      padding-left: 1.6em;
+    }
+
+    h5.ember-view.ember-content-editable {
+      display: inline;
+      vertical-align: super;
+      padding-left: 0;
+    }
+
+    #addNewQuestionMainBtn {
+      text-align: center;
+      margin: 0 auto;
+      display: block;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .addNewAnswerMainBtn, .deleteQuestionMainBtn {
+      text-align: right;
+      display: block;
+      font-weight: bold;
+    }
+  }
+
+  #answersInnerWrapper {
+    min-width: 650px;
+    min-height: 400px;
+    background-color: rgba(255, 255, 255, 0.6);
+    margin-top: 20px;
+    padding: 15px 35px 35px;
+
+    .ember-view .ember-content-editable {
+      display: inline;
+      vertical-align: super;
+      padding-left: 1.6em;
+    }
+
+    h5.ember-view.ember-content-editable {
+      display: inline;
+      vertical-align: super;
+      padding-left: 0;
+    }
+  }
+
+  @media #{$medium-and-down} {
+    #questionsInnerWrapper {
+      min-width: inherit;
+    }
+    #answersInnerWrapper {
+      min-width: 320px;
+    }
+    nav .brand-logo {
+      font-size: 1.4em;
+    }
+  }
+  @media #{$small-and-down} {
+    nav .brand-logo {
+      font-size: 1.2em;
+    }
+    footer {
+      font-size: 0.9em;
+    }
+  }
+
+}
+

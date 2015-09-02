@@ -1,0 +1,30 @@
+.qq-qna-wrapper {
+
+  max-width: 700px;
+  padding: 1.2em;
+
+  h4 {
+    margin-bottom: 1.3em;
+  }
+
+  [type="radio"]:not(:checked) + label:before {
+    border-color: white;
+  }
+
+  [type="radio"]:not(:checked) + label, [type="radio"]:checked + label {
+    font-size: 1.3em;
+  }
+
+  label {
+    color: white;
+  }
+
+  .answerBtnWrapper {
+    margin-top: 4em;
+  }
+
+  #showNameDialog {
+    font-size: 1.1em;
+    font-weight: 800;
+  }
+}

@@ -1,0 +1,115 @@
+<div id="innerSubhead" class="white black-text ">
+    <div class="container" style="text-align: center">
+        <h5>Instructions</h5>
+
+        <p>Click on a question to view the details.</p>
+
+        <p>In the details panel, you can <b>edit the question</b> text by clicking on it, typing and pressing enter</p>
+
+        <p>In the same way, you can <b>edit the answer</b> text by clicking on it, typing and pressing enter</p>
+    </div>
+</div>
+
+<div id="questionsOuterWrapper" class="flex-item">
+    <div id="questionsInnerWrapper">
+        <h3>Questions List</h3>
+        {{#md-card-collapsible }}
+            {{#each model as |item|}}
+                {{#md-collapsible title=item.text icon="mdi-numeric-1-box-multiple-outline"}}
+                    {{content-editable value=item.text type="text" tagName="h5" enter="updateQuestion"}}
+                    {{#if item.answers}}
+                        {{#md-collection content=item.answers as |ans|}}
+                            <div class='collection-item'>
+                                <i class="material-icons">input</i>
+                                {{content-editable value=ans.text type="text" enter="updateAnswer"}}
+                                <div class='secondary-content orange-text' {{action "openDeleteAnswerPopup" ans.id}}>Delete
+                                </div>
+                            </div>
+                        {{/md-collection}}
+                    {{else}}
+                        <p>Whoops, no answers here yet.</p>
+                    {{/if}}
+                    <a {{action 'openAddAnswerPopup' item.id}} class="addNewAnswerMainBtn">Add Another Answer</a>
+                    <a {{action 'openDeleteQuestionPopup' item.id}}
+                            class="deleteQuestionMainBtn red-text">Delete Question</a>
+                {{/md-collapsible}}
+
+            {{/each}}
+            <a {{action 'openAddQuestionPopup'}} id="addNewQuestionMainBtn">Add a New Question</a>
+        {{/md-card-collapsible}}
+    </div>
+</div>
+
+{{#if newAnswerModalIsOpen}}
+    {{#md-modal close='closeModal' class="test-modal"}}
+        <div class="modal-content">
+            <h4>New Answer</h4>
+
+            {{md-input value=newAnswerText
+            label="I'll type something here"
+            icon="mdi-content-add-box light-blue-text"}}
+        </div>
+        <div class="modal-footer">
+            <a class="modal-action modal-close waves-effect waves-orange btn-flat agree-button" {{action 'addAnswer'}}>
+                Done!
+            </a>
+            <a class="modal-action modal-close waves-effect waves-red btn-flat cancel-button" {{action 'closeAddAnswerPopup'}}>
+                Cancel
+            </a>
+        </div>
+    {{/md-modal}}
+{{/if}}
+
+{{#if newQuestionModalIsOpen}}
+    {{#md-modal close='closeModal' class="test-modal"}}
+        <div class="modal-content">
+            <h4>New Question</h4>
+
+            {{md-input value=newQuestionText
+            label="I'll type something here"
+            icon="mdi-content-add-box light-blue-text"}}
+        </div>
+        <div class="modal-footer">
+            <a class="modal-action modal-close waves-effect waves-orange btn-flat agree-button" {{action 'addQuestion'}}>
+                Done!
+            </a>
+            <a class="modal-action modal-close waves-effect waves-red btn-flat cancel-button" {{action 'closeAddQuestionPopup'}}>
+                Cancel
+            </a>
+        </div>
+    {{/md-modal}}
+{{/if}}
+
+{{#if deleteAnswerModalIsOpen}}
+    {{#md-modal close='closeModal' class="test-modal"}}
+        <div class="modal-content">
+            <h4>Delete this Answer?</h4>
+            <p>Was it the sp3lling? Was grammar it? Was it the weather? What was it that went wrong really?</p>
+        </div>
+        <div class="modal-footer">
+            <a class="modal-action modal-close waves-effect waves-orange btn-flat agree-button" {{action 'deleteAnswer'}}>
+                Just do it<sup>(tm)</sup>
+            </a>
+            <a class="modal-action modal-close waves-effect waves-red btn-flat cancel-button" {{action 'closeDeleteAnswerPopup'}}>
+                Cancel
+            </a>
+        </div>
+    {{/md-modal}}
+{{/if}}
+
+{{#if deleteQuestionModalIsOpen}}
+    {{#md-modal close='closeModal' class="test-modal"}}
+        <div class="modal-content">
+            <h4>Are you sure?</h4>
+            <p>Whoa there! This will remove the answers as well AND clear the relevant user submission history. Y U so cruel?</p>
+        </div>
+        <div class="modal-footer">
+            <a class="modal-action modal-close waves-effect waves-orange btn-flat agree-button" {{action 'deleteQuestion'}}>
+                This conversation is over
+            </a>
+            <a class="modal-action modal-close waves-effect waves-red btn-flat cancel-button" {{action 'closeDeleteQuestionPopup'}}>
+                I have reconsidered my course of action
+            </a>
+        </div>
+    {{/md-modal}}
+{{/if}}

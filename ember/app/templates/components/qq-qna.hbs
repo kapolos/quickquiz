@@ -1,0 +1,43 @@
+<div class="qq-qna-wrapper">
+    {{#if questions}}
+        {{#each questions as |question|}}
+            <h4>{{question.text}}</h4>
+            {{#md-radios
+            class='white-text'
+            selection=radioSelection
+            optionValuePath='id'
+            optionLabelPath='text'}}
+                {{#each question.answers as |ans|}}
+                    <p>{{md-radio selection=radioSelection value=ans.id name=ans.text}}</p>
+                {{/each}}
+            {{/md-radios}}
+            <div class="flex-item answerBtnWrapper">
+                {{md-btn text='I know I Know!!!!!1!1!!'
+                action='handleAnswer'
+                buttonType='large'
+                class='answerBtn'
+                class='deep-orange white-text'}}
+            </div>
+            {{#if showErrMsg}}
+                <div class="flex-item">
+                    <div class="errorMsg red-text">Didn't you forget something?</div>
+                </div>
+            {{/if}}
+            <div class="flex-item whatsthename">
+                {{#if showNameLink}}
+                    <div>Don't be a {{username}}, <a id="showNameDialog" href="#" {{action "showNameDialog"}}>add a
+                        name</a>
+                        to your answer
+                    </div>
+                {{else}}
+                    Save the kitty {{username}}!
+                {{/if}}
+            </div>
+        {{/each}}
+    {{else}}
+        <h3>Whooops</h3>
+        <h4>No available questions at this time</h4>
+
+        <p>But you can check again later ;)</p>
+    {{/if}}
+</div>

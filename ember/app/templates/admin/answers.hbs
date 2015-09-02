@@ -1,0 +1,23 @@
+<div id="answersOuterWrapper" class="flex-item">
+    <div id="answersInnerWrapper">
+        <h3>User Answers</h3>
+
+        {{#md-table content=pageItems class='bordered hoverable responsive-table' as |row|}}
+            {{#md-table-col row=row key='userId' header='User Id'}}
+                {{row.userId}}
+            {{/md-table-col}}
+            {{#md-table-col row=row key='userNickname' header='Nickname'}}
+                {{row.userNickname}}
+            {{/md-table-col}}
+            {{#md-table-col row=row key='question' header='Question'}}
+                {{row.question}}
+            {{/md-table-col}}
+            {{#md-table-col row=row key='answer' header='Answer'}}
+                {{row.answer}}
+            {{/md-table-col}}
+        {{/md-table}}
+        {{md-pagination min=1 max=maxPage current=curPage range=1}}
+    </div>
+</div>
+
+

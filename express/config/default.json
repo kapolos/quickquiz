@@ -1,0 +1,32 @@
+{
+  "frontend": {
+    "admin": {
+      "password": "correcthorsebatterystaple"
+    }
+  },
+  "production": {
+    "db": {
+      "host": "localhost",
+      "port": 3306,
+      "dialect": "mysql",
+      "dbname": "quickquiz",
+      "username": "root",
+      "password": "root",
+      "logging": true
+    },
+    "express": {
+      "port": 4200
+    }
+  },
+  "testing": {
+    "db": {
+      "dialect": "sqlite",
+      "dbname": "quickquiz",
+      "file": "testdb",
+      "logging": false
+    },
+    "express": {
+      "port": 4201
+    }
+  }
+}

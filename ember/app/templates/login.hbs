@@ -1,0 +1,25 @@
+<div id="page-login" class="light-blue lighten-2 pageWrapper">
+    <header class="white black-text flex-item">
+        <img id="fe-navlogo" src="http://kapolos.com/images/letter-512.png" alt=""/>
+    </header>
+    <main class="flex-item">
+        <div class="container white-text" id="loginWrapper">
+            <h2>What is the air-speed velocity of an unladen swallow?</h2>
+            <h5>Just kidding, simply enter the password below and press the button.</h5>
+            {{md-input value=adminpasswd label='Password' type="password"}}
+            {{#link-to 'index' class="white-text"}}Go to the Front-End instead{{/link-to}}
+            {{#if checking}}
+                {{md-loader}}
+            {{else}}
+                <div class="custErrMsg orange-text">{{failedMsg}}</div>
+                <div>
+                    {{md-btn text='Let Me In'
+                    action='checkCred'
+                    buttonType='large'
+                    class='loginBtn'
+                    class='deep-orange white-text right'}}
+                </div>
+            {{/if}}
+        </div>
+    </main>
+</div>

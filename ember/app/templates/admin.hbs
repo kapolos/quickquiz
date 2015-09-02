@@ -1,0 +1,33 @@
+<div id="template-admin" class="pageWrapper">
+    <header class="light-blue lighten-2 black-text flex-item">
+        {{#md-navbar name='Quick Quiz Administration' class='light-blue darken-2' homeRoute='admin.dashboard'}}
+            {{#link-to 'admin.questions' tagName='li'}}
+                {{link-to 'Questions' 'admin.questions'}}
+            {{/link-to}}
+            {{#link-to 'admin.answers' tagName='li'}}
+                {{link-to 'Answers' 'admin.answers'}}
+            {{/link-to}}
+            {{#link-to 'admin.logout' tagName='li'}}
+                {{link-to 'Logout' 'admin.logout'}}
+            {{/link-to}}
+        {{/md-navbar}}
+    </header>
+    <main class="light-blue lighten-5">
+        {{outlet}}
+    </main>
+
+    <footer class='page-footer light-blue white-text'>
+        <div class="container">
+            <div class="row">
+                <div class="col m12 s12 flex-item">
+                    <img id="fe-navlogo" src="http://kapolos.com/images/letter-512.png" alt=""/>
+                </div>
+            </div>
+        </div>
+        {{#md-copyright text='Made with ❤ (and ♠, ♦, & ♣)'
+        startYear=2015
+        class='light-blue darken-2 white-text'}}
+            {{#link-to 'index' class="white-text right"}}Front-end{{/link-to}}
+        {{/md-copyright}}
+    </footer>
+</div>
