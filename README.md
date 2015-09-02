@@ -101,6 +101,7 @@ Install the project dependencies but read the caveats at the end of this documen
 
 ```bash
 npm install
+bower install
 ```
 
 Now you are ready to make changes to the Ember code. To have the changes reflected to the actual site:
