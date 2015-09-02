@@ -65,20 +65,9 @@ for the administration pages and the port for the express server (default: 4200)
 
 ### Execution
 
-#### First time 
-
 ```bash
 npm start
 ```
-
-#### Important
-
-`app.js` is set by default to `sync` the database with the schema. In practice, it will `drop` the tables and remove
-all data if they exist. 
-
-While this is great for the first run (it will create the database schema), it is clearly undesirable from then on. 
-So it is important that you edit `app.js` after the first execution 
-to change `orm.sequelize.sync({force: true})` in `orm.sequelize.sync({force: false})`
 
 ### Tests
 
