@@ -15,7 +15,7 @@ orm.connect(dbConfig.dbname, dbConfig.username, dbConfig.password, {
     logging: dbConfig.logging
 });
 
-orm.sequelize.sync({force: false})
+orm.sequelize.sync({force: true})
     .then(function () {
         var app = express();
 
