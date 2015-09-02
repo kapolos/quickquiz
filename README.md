@@ -132,7 +132,7 @@ For a production build, also add the `--environment=production` option.
 
 If you are installing as root (which you shouldn't but perhaps you are installing inside a VM or container), then
 you should know that the `bower` part ofthe installation will fail because it blocks execution from `root` by default.
-To fix this, create `/root/.bowerrc` with `` as content.
+To fix this, create `/root/.bowerrc` with `{"allow_root": true}` as content.
 
 io.js 3.x will fail to install the dependencies because `libsass` does not support it. 3.x has broken a lot of native
  modules and the authors have not updated them yet. So make sure to use 2.x
